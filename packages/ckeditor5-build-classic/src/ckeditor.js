@@ -23,6 +23,12 @@ import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
+import AutoSave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
+import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace';
+import Font from '@ckeditor/ckeditor5-font/src/font';
+import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
+import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -44,7 +50,13 @@ ClassicEditor.builtinPlugins = [
 	MediaEmbed,
 	Paragraph,
 	Table,
-	TableToolbar
+	TableToolbar,
+	AutoSave,
+	CodeBlock,
+	FindAndReplace,
+	Font,
+	Alignment,
+	ListStyle
 ];
 
 // Editor configuration.
@@ -52,21 +64,25 @@ ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
 			'heading',
+			'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor',
 			'|',
 			'bold',
 			'italic',
-			'link',
-			'bulletedList',
-			'numberedList',
-			'|',
 			'outdent',
 			'indent',
+			'alignment',
+			'numberedList',
+			'bulletedList',
 			'|',
-			'blockQuote',
+			'codeblock',
 			'insertTable',
 			'mediaEmbed',
+			'link',
+			'|',
+			'blockQuote',
 			'undo',
-			'redo'
+			'redo',
+			'findAndReplace'
 		]
 	},
 	image: {
