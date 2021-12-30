@@ -30,6 +30,8 @@ import Font from '@ckeditor/ckeditor5-font/src/font';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle';
 
+import LocalFile from '../plugins/localfile/src/localfile';
+
 export default class ClassicEditor extends ClassicEditorBase {}
 
 // Plugins to include in the build.
@@ -56,7 +58,9 @@ ClassicEditor.builtinPlugins = [
 	FindAndReplace,
 	Font,
 	Alignment,
-	ListStyle
+	ListStyle,
+
+	LocalFile
 ];
 
 // Editor configuration.
@@ -75,6 +79,7 @@ ClassicEditor.defaultConfig = {
 			'bulletedList',
 			'|',
 			'codeblock',
+			'localfile',
 			'insertTable',
 			'mediaEmbed',
 			'link',
