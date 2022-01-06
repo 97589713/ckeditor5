@@ -79,7 +79,7 @@ ClassicEditor.defaultConfig = {
 			'bulletedList',
 			'|',
 			'codeblock',
-			'localfile',
+			'localFile',
 			'insertTable',
 			'mediaEmbed',
 			'link',
