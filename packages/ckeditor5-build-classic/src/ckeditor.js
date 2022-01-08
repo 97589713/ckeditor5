@@ -23,14 +23,14 @@ import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-import AutoSave from '@ckeditor/ckeditor5-autosave/src/autosave';
+//import AutoSave from '@ckeditor/ckeditor5-autosave/src/autosave';
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock';
-import FindAndReplace from '@ckeditor/ckeditor5-find-and-replace/src/findandreplace';
 import Font from '@ckeditor/ckeditor5-font/src/font';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle';
 
 import LocalFile from '../plugins/localfile/src/localfile';
+import AutoSave from '../plugins/localfile/src/autosave'
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -55,7 +55,6 @@ ClassicEditor.builtinPlugins = [
 	TableToolbar,
 	AutoSave,
 	CodeBlock,
-	FindAndReplace,
 	Font,
 	Alignment,
 	ListStyle,
@@ -86,8 +85,7 @@ ClassicEditor.defaultConfig = {
 			'|',
 			'blockQuote',
 			'undo',
-			'redo',
-			'findAndReplace'
+			'redo'
 		]
 	},
 	image: {
@@ -105,6 +103,23 @@ ClassicEditor.defaultConfig = {
 			'tableColumn',
 			'tableRow',
 			'mergeTableCells'
+		]
+	},
+	mediaEmbed: {
+		previewsInData: true,
+		extraProviders: [
+			{
+				 name: 'extraProvider',
+				 url: /^(\.\.\/[\s\S]+)/,// /^(file:[\s\S]+)/,
+				 html: match => {
+					const fileName = match[0];
+					return (
+						'<div style="position: relative; padding-bottom: 100%; height: 0; padding-bottom: 56.2493%;">' +
+						'<video style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;" controls><source src="'+ fileName + '"></video>' +
+						'</div>'
+					);
+				}
+			}
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
