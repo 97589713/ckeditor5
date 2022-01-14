@@ -1,0 +1,10 @@
+.ck.ck-code-block-dropdown .ck-dropdown__panel {
+	/* There could be dozens of languages available. Use scroll to prevent a 10e6px dropdown. */
+	max-height: 500px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+.ck.ck-list__item .ck-button .ck-button__label{
+    line-height: 1.2;
+}

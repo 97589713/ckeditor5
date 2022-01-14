@@ -31,7 +31,8 @@ import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import ListStyle from '@ckeditor/ckeditor5-list/src/liststyle';
 
 import LocalFile from '../plugins/localfile/src/localfile';
-import AutoSave from '../plugins/localfile/src/autosave'
+import AutoSave from '../plugins/localfile/src/autosave';
+import '../theme/custom.css';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -122,6 +123,42 @@ ClassicEditor.defaultConfig = {
 					);
 				}
 			}
+		]
+	},
+	codeBlock: {
+		languages: [
+			{ language: 'auto', label: '自动检测语言', class: '' }, // The default language.
+			{ language: 'plaintext', label: 'Plain text' },
+			{ language: 'bash', label: 'Bash' },
+			{ language: 'c', label: 'C' },
+			{ language: 'cs', label: 'C#' },
+			{ language: 'cpp', label: 'C++' },
+			{ language: 'css', label: 'CSS' },
+			{ language: 'diff', label: 'Diff' },
+			{ language: 'erlang', label: 'Erlang' },
+			{ language: 'go', label: 'Go' },
+			{ language: 'xml', label: 'HTML/XML' },
+			{ language: 'json', label: 'JSON' },
+			{ language: 'java', label: 'Java' },
+			{ language: 'javascript', label: 'JavaScript' },
+			{ language: 'kotlin', label: 'Kotlin' },
+			{ language: 'less', label: 'Less' },
+			{ language: 'lua', label: 'Lua' },
+			{ language: 'makefile', label: 'Makefile' },
+			{ language: 'markdown', label: 'Markdown' },
+			{ language: 'objectivec', label: 'Objective-C' },
+			{ language: 'php', label: 'PHP' },
+			{ language: 'perl', label: 'Perl' },
+			{ language: 'python', label: 'Python' },
+			{ language: 'ruby', label: 'Ruby' },
+			{ language: 'rust', label: 'Rust' },
+			{ language: 'scss', label: 'SCSS' },
+			{ language: 'sql', label: 'SQL' },
+			{ language: 'shell', label: 'Shell Session' },
+			{ language: 'swift', label: 'Swift' },
+			{ language: 'typescript', label: 'TypeScript' },
+			{ language: 'vbnet', label: 'Visual Basic .NET' },
+			{ language: 'yaml', label: 'YAML' }
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
